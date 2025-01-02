@@ -1,0 +1,12 @@
+---
+collections:
+  - name: ansible.netcommon
+
+  - name: redhat.rhv
+    version: 2.1.0
+
+  - name: community.crypto
+    version: 2.7.0
+
+  - name: ansible.controller
+    version: 4.2.1

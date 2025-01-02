@@ -1,0 +1,406 @@
+{
+    "plays": [
+        {
+            "__play_name": "Pinging all servers",
+            "name": "Pinging all servers",
+            "pattern": "all_servers",
+            "play": "Pinging all servers",
+            "play_pattern": "all_servers",
+            "play_uuid": "cad84aaf-7fbe-dbdd-87df-00000000000b",
+            "playbook": "/home/student/inventory-yaml/test-ping-all-servers.yml",
+            "playbook_uuid": "c2bb90e7-9e2c-43fe-8be1-fdab7a916d38",
+            "tasks": [
+                {
+                    "__changed": false,
+                    "__duration": "1s",
+                    "__host": "servera.lab.example.com",
+                    "__number": 0,
+                    "__result": "Ok",
+                    "__task": "Ensure the hosts are reachable",
+                    "__task_action": "ansible.builtin.ping",
+                    "duration": 0.854897,
+                    "end": "2025-01-02T12:20:25.436163",
+                    "event_loop": null,
+                    "host": "servera.lab.example.com",
+                    "play": "Pinging all servers",
+                    "play_pattern": "all_servers",
+                    "play_uuid": "cad84aaf-7fbe-dbdd-87df-00000000000b",
+                    "playbook": "/home/student/inventory-yaml/test-ping-all-servers.yml",
+                    "playbook_uuid": "c2bb90e7-9e2c-43fe-8be1-fdab7a916d38",
+                    "remote_addr": "servera.lab.example.com",
+                    "res": {
+                        "_ansible_no_log": null,
+                        "ansible_facts": {
+                            "discovered_interpreter_python": "/usr/libexec/platform-python"
+                        },
+                        "changed": false,
+                        "invocation": {
+                            "module_args": {
+                                "data": "pong"
+                            }
+                        },
+                        "ping": "pong"
+                    },
+                    "resolved_action": "ansible.builtin.ping",
+                    "start": "2025-01-02T12:20:24.581266",
+                    "task": "Ensure the hosts are reachable",
+                    "task_action": "ansible.builtin.ping",
+                    "task_args": "",
+                    "task_path": "/home/student/inventory-yaml/test-ping-all-servers.yml:8",
+                    "task_uuid": "cad84aaf-7fbe-dbdd-87df-00000000000d",
+                    "uuid": "d749e6a4-4a19-491e-8f31-fcf73a7eefec"
+                },
+                {
+                    "__changed": false,
+                    "__duration": "1s",
+                    "__host": "serverb.lab.example.com",
+                    "__number": 1,
+                    "__result": "Ok",
+                    "__task": "Ensure the hosts are reachable",
+                    "__task_action": "ansible.builtin.ping",
+                    "duration": 0.847221,
+                    "end": "2025-01-02T12:20:25.442929",
+                    "event_loop": null,
+                    "host": "serverb.lab.example.com",
+                    "play": "Pinging all servers",
+                    "play_pattern": "all_servers",
+                    "play_uuid": "cad84aaf-7fbe-dbdd-87df-00000000000b",
+                    "playbook": "/home/student/inventory-yaml/test-ping-all-servers.yml",
+                    "playbook_uuid": "c2bb90e7-9e2c-43fe-8be1-fdab7a916d38",
+                    "remote_addr": "serverb.lab.example.com",
+                    "res": {
+                        "_ansible_no_log": null,
+                        "ansible_facts": {
+                            "discovered_interpreter_python": "/usr/libexec/platform-python"
+                        },
+                        "changed": false,
+                        "invocation": {
+                            "module_args": {
+                                "data": "pong"
+                            }
+                        },
+                        "ping": "pong"
+                    },
+                    "resolved_action": "ansible.builtin.ping",
+                    "start": "2025-01-02T12:20:24.595708",
+                    "task": "Ensure the hosts are reachable",
+                    "task_action": "ansible.builtin.ping",
+                    "task_args": "",
+                    "task_path": "/home/student/inventory-yaml/test-ping-all-servers.yml:8",
+                    "task_uuid": "cad84aaf-7fbe-dbdd-87df-00000000000d",
+                    "uuid": "25541afc-3011-4bb6-99d3-59dfdd4ddd09"
+                },
+                {
+                    "__changed": false,
+                    "__duration": "1s",
+                    "__host": "serverc.lab.example.com",
+                    "__number": 2,
+                    "__result": "Ok",
+                    "__task": "Ensure the hosts are reachable",
+                    "__task_action": "ansible.builtin.ping",
+                    "duration": 0.944972,
+                    "end": "2025-01-02T12:20:25.555761",
+                    "event_loop": null,
+                    "host": "serverc.lab.example.com",
+                    "play": "Pinging all servers",
+                    "play_pattern": "all_servers",
+                    "play_uuid": "cad84aaf-7fbe-dbdd-87df-00000000000b",
+                    "playbook": "/home/student/inventory-yaml/test-ping-all-servers.yml",
+                    "playbook_uuid": "c2bb90e7-9e2c-43fe-8be1-fdab7a916d38",
+                    "remote_addr": "serverc.lab.example.com",
+                    "res": {
+                        "_ansible_no_log": null,
+                        "ansible_facts": {
+                            "discovered_interpreter_python": "/usr/libexec/platform-python"
+                        },
+                        "changed": false,
+                        "invocation": {
+                            "module_args": {
+                                "data": "pong"
+                            }
+                        },
+                        "ping": "pong"
+                    },
+                    "resolved_action": "ansible.builtin.ping",
+                    "start": "2025-01-02T12:20:24.610789",
+                    "task": "Ensure the hosts are reachable",
+                    "task_action": "ansible.builtin.ping",
+                    "task_args": "",
+                    "task_path": "/home/student/inventory-yaml/test-ping-all-servers.yml:8",
+                    "task_uuid": "cad84aaf-7fbe-dbdd-87df-00000000000d",
+                    "uuid": "255e9756-6899-4b74-8881-befc060f931f"
+                },
+                {
+                    "__changed": false,
+                    "__duration": "1s",
+                    "__host": "serverd.lab.example.com",
+                    "__number": 3,
+                    "__result": "Ok",
+                    "__task": "Ensure the hosts are reachable",
+                    "__task_action": "ansible.builtin.ping",
+                    "duration": 0.854726,
+                    "end": "2025-01-02T12:20:25.478739",
+                    "event_loop": null,
+                    "host": "serverd.lab.example.com",
+                    "play": "Pinging all servers",
+                    "play_pattern": "all_servers",
+                    "play_uuid": "cad84aaf-7fbe-dbdd-87df-00000000000b",
+                    "playbook": "/home/student/inventory-yaml/test-ping-all-servers.yml",
+                    "playbook_uuid": "c2bb90e7-9e2c-43fe-8be1-fdab7a916d38",
+                    "remote_addr": "serverd.lab.example.com",
+                    "res": {
+                        "_ansible_no_log": null,
+                        "ansible_facts": {
+                            "discovered_interpreter_python": "/usr/libexec/platform-python"
+                        },
+                        "changed": false,
+                        "invocation": {
+                            "module_args": {
+                                "data": "pong"
+                            }
+                        },
+                        "ping": "pong"
+                    },
+                    "resolved_action": "ansible.builtin.ping",
+                    "start": "2025-01-02T12:20:24.624013",
+                    "task": "Ensure the hosts are reachable",
+                    "task_action": "ansible.builtin.ping",
+                    "task_args": "",
+                    "task_path": "/home/student/inventory-yaml/test-ping-all-servers.yml:8",
+                    "task_uuid": "cad84aaf-7fbe-dbdd-87df-00000000000d",
+                    "uuid": "5b28fb8e-6332-4571-b4e3-0779779b84ab"
+                },
+                {
+                    "__changed": false,
+                    "__duration": "1s",
+                    "__host": "servere.lab.example.com",
+                    "__number": 4,
+                    "__result": "Ok",
+                    "__task": "Ensure the hosts are reachable",
+                    "__task_action": "ansible.builtin.ping",
+                    "duration": 0.816469,
+                    "end": "2025-01-02T12:20:25.465247",
+                    "event_loop": null,
+                    "host": "servere.lab.example.com",
+                    "play": "Pinging all servers",
+                    "play_pattern": "all_servers",
+                    "play_uuid": "cad84aaf-7fbe-dbdd-87df-00000000000b",
+                    "playbook": "/home/student/inventory-yaml/test-ping-all-servers.yml",
+                    "playbook_uuid": "c2bb90e7-9e2c-43fe-8be1-fdab7a916d38",
+                    "remote_addr": "servere.lab.example.com",
+                    "res": {
+                        "_ansible_no_log": null,
+                        "ansible_facts": {
+                            "discovered_interpreter_python": "/usr/libexec/platform-python"
+                        },
+                        "changed": false,
+                        "invocation": {
+                            "module_args": {
+                                "data": "pong"
+                            }
+                        },
+                        "ping": "pong"
+                    },
+                    "resolved_action": "ansible.builtin.ping",
+                    "start": "2025-01-02T12:20:24.648778",
+                    "task": "Ensure the hosts are reachable",
+                    "task_action": "ansible.builtin.ping",
+                    "task_args": "",
+                    "task_path": "/home/student/inventory-yaml/test-ping-all-servers.yml:8",
+                    "task_uuid": "cad84aaf-7fbe-dbdd-87df-00000000000d",
+                    "uuid": "5f8bdb9a-b0a7-4b22-a829-8bbc6a2124f5"
+                },
+                {
+                    "__changed": false,
+                    "__duration": "1s",
+                    "__host": "serverf.lab.example.com",
+                    "__number": 5,
+                    "__result": "Ok",
+                    "__task": "Ensure the hosts are reachable",
+                    "__task_action": "ansible.builtin.ping",
+                    "duration": 0.801976,
+                    "end": "2025-01-02T12:20:26.232288",
+                    "event_loop": null,
+                    "host": "serverf.lab.example.com",
+                    "play": "Pinging all servers",
+                    "play_pattern": "all_servers",
+                    "play_uuid": "cad84aaf-7fbe-dbdd-87df-00000000000b",
+                    "playbook": "/home/student/inventory-yaml/test-ping-all-servers.yml",
+                    "playbook_uuid": "c2bb90e7-9e2c-43fe-8be1-fdab7a916d38",
+                    "remote_addr": "serverf.lab.example.com",
+                    "res": {
+                        "_ansible_no_log": null,
+                        "ansible_facts": {
+                            "discovered_interpreter_python": "/usr/libexec/platform-python"
+                        },
+                        "changed": false,
+                        "invocation": {
+                            "module_args": {
+                                "data": "pong"
+                            }
+                        },
+                        "ping": "pong"
+                    },
+                    "resolved_action": "ansible.builtin.ping",
+                    "start": "2025-01-02T12:20:25.430312",
+                    "task": "Ensure the hosts are reachable",
+                    "task_action": "ansible.builtin.ping",
+                    "task_args": "",
+                    "task_path": "/home/student/inventory-yaml/test-ping-all-servers.yml:8",
+                    "task_uuid": "cad84aaf-7fbe-dbdd-87df-00000000000d",
+                    "uuid": "6a3d5bd8-8773-44b7-8b1c-e7a0bca18073"
+                }
+            ],
+            "uuid": "cad84aaf-7fbe-dbdd-87df-00000000000b"
+        }
+    ],
+    "settings_entries": {
+        "ansible-navigator": {
+            "ansible": {
+                "config": {
+                    "help": false,
+                    "path": "./ansible.cfg"
+                },
+                "doc": {
+                    "help": false,
+                    "plugin": {
+                        "type": "module"
+                    }
+                },
+                "inventory": {
+                    "entries": [
+                        "/home/student/inventory-yaml/inventory.yml"
+                    ],
+                    "help": false
+                },
+                "playbook": {
+                    "help": false,
+                    "path": "/home/student/inventory-yaml/test-ping-all-servers.yml"
+                }
+            },
+            "ansible-builder": {
+                "help": false,
+                "workdir": "/home/student/inventory-yaml"
+            },
+            "app": "run",
+            "collection-doc-cache-path": "/home/student/.cache/ansible-navigator/collection_doc_cache.db",
+            "color": {
+                "enable": true,
+                "osc4": true
+            },
+            "editor": {
+                "command": "vi +{line_number} {filename}",
+                "console": true
+            },
+            "exec": {
+                "command": "/bin/bash",
+                "shell": true
+            },
+            "execution-environment": {
+                "container-engine": "podman",
+                "enabled": true,
+                "image": "ee-supported-rhel8:latest",
+                "pull": {
+                    "policy": "missing"
+                }
+            },
+            "images": {
+                "details": [
+                    "everything"
+                ]
+            },
+            "logging": {
+                "append": true,
+                "file": "/dev/null",
+                "level": "warning"
+            },
+            "mode": "stdout",
+            "playbook-artifact": {
+                "enable": true,
+                "save-as": "{playbook_dir}/{playbook_name}-artifact-{time_stamp}.json"
+            },
+            "settings": {
+                "effective": false,
+                "sample": false,
+                "schema": "json",
+                "sources": false
+            },
+            "time-zone": "UTC"
+        }
+    },
+    "settings_sources": {
+        "ansible-navigator.ansible-builder.help": "Defaults",
+        "ansible-navigator.ansible-builder.workdir": "Defaults",
+        "ansible-navigator.ansible-lint.config": "Not set",
+        "ansible-navigator.ansible-lint.lintables": "Not set",
+        "ansible-navigator.ansible-runner.artifact-dir": "Not set",
+        "ansible-navigator.ansible-runner.rotate-artifacts-count": "Not set",
+        "ansible-navigator.ansible-runner.timeout": "Not set",
+        "ansible-navigator.ansible.cmdline": "Not set",
+        "ansible-navigator.ansible.config.help": "Defaults",
+        "ansible-navigator.ansible.config.path": "Settings file",
+        "ansible-navigator.ansible.doc.help": "Defaults",
+        "ansible-navigator.ansible.doc.plugin.name": "Not set",
+        "ansible-navigator.ansible.doc.plugin.type": "Defaults",
+        "ansible-navigator.ansible.inventory.entries": "Command line",
+        "ansible-navigator.ansible.inventory.help": "Defaults",
+        "ansible-navigator.ansible.playbook.help": "Defaults",
+        "ansible-navigator.ansible.playbook.path": "Command line",
+        "ansible-navigator.app": "Command line",
+        "ansible-navigator.collection-doc-cache-path": "Defaults",
+        "ansible-navigator.color.enable": "Defaults",
+        "ansible-navigator.color.osc4": "Defaults",
+        "ansible-navigator.editor.command": "Defaults",
+        "ansible-navigator.editor.console": "Defaults",
+        "ansible-navigator.exec.command": "Defaults",
+        "ansible-navigator.exec.shell": "Defaults",
+        "ansible-navigator.execution-environment.container-engine": "Automatically determined",
+        "ansible-navigator.execution-environment.container-options": "Not set",
+        "ansible-navigator.execution-environment.enabled": "Defaults",
+        "ansible-navigator.execution-environment.environment-variables.pass": "Not set",
+        "ansible-navigator.execution-environment.environment-variables.set": "Not set",
+        "ansible-navigator.execution-environment.image": "Settings file",
+        "ansible-navigator.execution-environment.pull.arguments": "Not set",
+        "ansible-navigator.execution-environment.pull.policy": "Settings file",
+        "ansible-navigator.execution-environment.volume-mounts": "Not set",
+        "ansible-navigator.images.details": "Defaults",
+        "ansible-navigator.inventory-columns": "Not set",
+        "ansible-navigator.logging.append": "Defaults",
+        "ansible-navigator.logging.file": "Settings file",
+        "ansible-navigator.logging.level": "Defaults",
+        "ansible-navigator.mode": "Command line",
+        "ansible-navigator.playbook-artifact.enable": "Defaults",
+        "ansible-navigator.playbook-artifact.replay": "Not set",
+        "ansible-navigator.playbook-artifact.save-as": "Defaults",
+        "ansible-navigator.settings.effective": "Defaults",
+        "ansible-navigator.settings.sample": "Defaults",
+        "ansible-navigator.settings.schema": "Defaults",
+        "ansible-navigator.settings.sources": "Defaults",
+        "ansible-navigator.time-zone": "Defaults",
+        "settings_file_path": "/home/student/inventory-yaml/ansible-navigator.yml",
+        "settings_file_source": "Search path"
+    },
+    "status": "successful",
+    "status_color": 10,
+    "stdout": [
+        "",
+        "PLAY [Pinging all servers] *****************************************************",
+        "",
+        "TASK [Ensure the hosts are reachable] ******************************************",
+        "\u001b[0;32mok: [servera.lab.example.com]\u001b[0m",
+        "\u001b[0;32mok: [serverb.lab.example.com]\u001b[0m",
+        "\u001b[0;32mok: [servere.lab.example.com]\u001b[0m",
+        "\u001b[0;32mok: [serverd.lab.example.com]\u001b[0m",
+        "\u001b[0;32mok: [serverc.lab.example.com]\u001b[0m",
+        "\u001b[0;32mok: [serverf.lab.example.com]\u001b[0m",
+        "",
+        "PLAY RECAP *********************************************************************",
+        "\u001b[0;32mservera.lab.example.com\u001b[0m    : \u001b[0;32mok=1   \u001b[0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   ",
+        "\u001b[0;32mserverb.lab.example.com\u001b[0m    : \u001b[0;32mok=1   \u001b[0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   ",
+        "\u001b[0;32mserverc.lab.example.com\u001b[0m    : \u001b[0;32mok=1   \u001b[0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   ",
+        "\u001b[0;32mserverd.lab.example.com\u001b[0m    : \u001b[0;32mok=1   \u001b[0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   ",
+        "\u001b[0;32mservere.lab.example.com\u001b[0m    : \u001b[0;32mok=1   \u001b[0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   ",
+        "\u001b[0;32mserverf.lab.example.com\u001b[0m    : \u001b[0;32mok=1   \u001b[0m changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   "
+    ],
+    "version": "2.0.0"
+}

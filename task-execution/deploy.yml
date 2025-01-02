@@ -1,0 +1,41 @@
+---
+- name: Implementing Handlers
+  hosts: web_servers
+
+  pre_tasks:
+    - name: Configuring Apache
+      ansible.builtin.include_tasks: apache.yml
+
+    - name: Setting web port and zone for firewall
+      changed_when: true
+      notify: display variables
+      ansible.builtin.set_fact:
+        web_port: 80/tcp
+        web_zone: public
+
+  roles:
+    - role: firewall
+
+  post_tasks:
+    - name: Ensure the web content is copied
+      notify: verify connectivity
+      ansible.builtin.copy:
+        src: index.html
+        dest: /var/www/html/
+
+  handlers:
+    - name: Showing the web port configured as pre_task
+      listen: display variables
+      ansible.builtin.debug:
+        var: web_port
+
+    - name: Showing the web zone configured as pre_task
+      listen: display variables
+      ansible.builtin.debug:
+        var: web_zone
+
+    - name: verify connectivity
+      become: false
+      ansible.builtin.uri:
+        url: http://{{ ansible_facts['fqdn'] }}
+        status_code: 200

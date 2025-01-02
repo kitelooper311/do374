@@ -1,0 +1,45 @@
+download_url: https://hub.lab.example.com/api/galaxy/v3/plugin/ansible/content/rh-certified/collections/artifacts/ansible-netcommon-4.1.0.tar.gz
+format_version: 1.0.0
+name: netcommon
+namespace: ansible
+server: https://hub.lab.example.com/api/galaxy/content/rh-certified/
+signatures:
+- pubkey_fingerprint: 39B5D759361A97464C564A8FE1A4BD708A828AAD
+  pulp_created: '2022-12-19T16:05:12.208750Z'
+  signature: '-----BEGIN PGP SIGNATURE-----
+
+    Version: GnuPG v1
+
+
+    iQIVAwUAY2PPW+GkvXCKgoqtAQiRdRAAsPVFWSM8Bb54qtCwmVeozcjnJjSLpExC
+
+    KV5R5x+UfpYEbxieBR9KgP0/a+Pt1BhZBbp6/WZhgo5BZOw4k8Whz7OFIniR758h
+
+    sL0RB0kbJ8vuy95T651pZG5ZmBQIkxPloD2+2m9OzS1POhUPuzRTHARRGY9Wp8zu
+
+    1PZeuS1FrZQqRlCejkR+scbE0RR/JfXVb8uZ69GupKUECR6032gXC6sQcyYmFWWd
+
+    pSJqq2EobldzKTqD4YlYeW4be/0LKqW3Q2HuYnH6dwT80xV/TiFSYJGsslYXJcL8
+
+    VLKHTc2rnmXvZ6V/XQu8qgYToV69WmwMEsRn3rUqgnyQYzVsG2uJr5hgghXktj9x
+
+    i1nm8vDsAx0CA+XIX5mL4fOIA31WF5DmYlIlFhwYrtSym9nM+azA/UQjOgn0pPyM
+
+    Hh1ai2fUweuqlIMnUhxXt+H5wmwuHaFr75NWj8w5Luh166VeIXYRCOhHMLW3f4Ff
+
+    an6uT7F9JM2z8Z//ORZn0H4k2zHBKTaMOdzHF+a3ad4QkTe0ZXHrdHFysjwsBthm
+
+    rQn+ZTgqjTNu/Y0ZHMczLeL35AtY32ky8D7ns/V2efngIQ4XXH5FhO9HAGdC3Dek
+
+    ZgO/iIp3sfO5CUM+7hWJ6BQNBpZrpw3IURi59rLVX+w2YVwGMDf178VDgS6JS1Gh
+
+    lZA0bgio09k=
+
+    =tJGi
+
+    -----END PGP SIGNATURE-----
+
+'
+  signing_service: null
+version: 4.1.0
+version_url: /api/galaxy/content/rh-certified/v3/plugin/ansible/content/rh-certified/collections/index/ansible/netcommon/versions/4.1.0/

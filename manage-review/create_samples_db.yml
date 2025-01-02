@@ -1,0 +1,23 @@
+---
+- name: Create samples database
+  hosts: serverb.lab.example.com
+  become: true
+
+  tasks:
+    - name: Ensure MariaDB is installed
+      ansible.builtin.yum:
+        name:
+          - mariadb
+          - mariadb-server
+        state: present
+
+    - name: Ensure the mariadb service is started and enabled
+      ansible.builtin.systemd:
+        name: mariadb
+        state: started
+        enabled: true
+
+    - name: Ensure the samples database exists
+      community.mysql.mysql_db:
+        name: samples
+        state: present

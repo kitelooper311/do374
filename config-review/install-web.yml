@@ -1,0 +1,12 @@
+---
+- name: Install web server
+  hosts: webservers
+  remote_user: student
+  become: true
+
+
+  tasks:
+    - name: Install httpd package
+      ansible.builtin.yum:
+        name: httpd
+        state: latest

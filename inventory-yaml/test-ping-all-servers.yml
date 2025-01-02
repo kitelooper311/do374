@@ -1,0 +1,10 @@
+---
+- name: Pinging all servers
+  hosts: all_servers
+  become: false
+  gather_facts: false
+
+  tasks:
+    - name: Ensure the hosts are reachable
+      ansible.builtin.ping:
+...

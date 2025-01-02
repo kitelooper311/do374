@@ -1,0 +1,14 @@
+---
+- name: Retrieving ACLs using the ansible.posix collection
+  hosts: web_servers
+  gather_facts: false
+
+  tasks:
+    - name: Obtain the ACLs for /webserver_data directory
+      ansible.posix.acl:
+        path: /webserver_data/
+      register: acl_info
+
+    - name: Print the ACLs obtained for /webserver_data directory
+      ansible.builtin.debug:
+        var: acl_info['acl']

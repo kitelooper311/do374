@@ -1,0 +1,42 @@
+---
+- name: Cleaning Firewall rules
+  hosts: web_servers
+
+  roles:
+    - role: firewall
+      vars:
+        firewall_rules:
+          - port: 80/tcp
+            zone: public
+            state: disabled
+
+  tasks:
+    - name: Uninstall apache
+      notify: package check
+      ansible.builtin.yum:
+        name: httpd
+        state: absent
+        autoremove: true
+
+  post_tasks:
+    - name: Removing index.html file
+      notify: post handler
+      ansible.builtin.file:
+        path: /var/www/html/index.html
+        state: absent
+
+  handlers:
+    - name: Gather package facts
+      ansible.builtin.package_facts:
+        manager: auto
+      listen: package check
+
+    - name: Check for the httpd package
+      ansible.builtin.debug:
+        msg: "httpd is not installed!"
+      when: "'httpd' not in ansible_facts['packages']"
+      listen: package check
+
+    - name: post handler
+      ansible.builtin.debug:
+        msg: The index.html file was deleted

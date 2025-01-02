@@ -1,0 +1,23 @@
+---
+- name: Deploy cockpit
+  hosts: servera.lab.example.com
+  become: true
+
+  tasks:
+    - name: Ensure cockpit is installed
+      ansible.builtin.yum:
+        name: cockpit
+        state: present
+
+    - name: Ensure the cockpit service is started and enabled
+      ansible.builtin.systemd:
+        name: cockpit
+        state: started
+        enabled: true
+
+    - name: Ensure Cockpit network traffic is allowed
+      ansible.posix.firewalld:
+        service: cockpit
+        permanent: true
+        state: enabled
+        immediate: true

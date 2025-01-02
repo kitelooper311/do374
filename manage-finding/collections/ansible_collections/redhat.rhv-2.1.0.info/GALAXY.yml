@@ -1,0 +1,45 @@
+download_url: https://hub.lab.example.com/api/galaxy/v3/plugin/ansible/content/rh-certified/collections/artifacts/redhat-rhv-2.1.0.tar.gz
+format_version: 1.0.0
+name: rhv
+namespace: redhat
+server: https://hub.lab.example.com/api/galaxy/content/rh-certified/
+signatures:
+- pubkey_fingerprint: 39B5D759361A97464C564A8FE1A4BD708A828AAD
+  pulp_created: '2022-12-19T16:05:10.687867Z'
+  signature: '-----BEGIN PGP SIGNATURE-----
+
+    Version: GnuPG v1
+
+
+    iQIVAwUAYy43luGkvXCKgoqtAQi84w//fqtlpwpejbySHqhjD2ISwUUN5IPjptmi
+
+    FIYeQCm3hFunJErxpD6P7V3vrWaxwJ/wbyR9lpKrG6Q4iX19VgKT3k8KZMBOGtci
+
+    3Q73WcjNzm4M4lv+72we0SiDCaq/ZTt3XXn6RHNnQuwC6wieNDUvWK7enXh4LgsU
+
+    uD9xz57Kn4rls+uUrPNf9I4pEBXibZO1VQVdnJ11kuV1WUorBIh4mlZZR4KNon59
+
+    otEZJYP7Fse1MyM5/MKHidjBEqK/WO9ImdmA7qwlT1eDWBpDaoCMbOSYE56JW6jD
+
+    +X3dC0Ne6VuHCzkzRvbR9DRm8BaBL0C8yatN1Z8QnGN6sWDFgmjFWIbpO/l0e9+v
+
+    oXo0PS6X7BDvB24HOqXeGtgaAf1Ol5vKyyvWrjbSqye3ZC1i2/cGwTU6JVVLd2XA
+
+    zQb+nWHTfANxTzYAIhopqJicrMbBsvmmLoYWcsR3GU9qTd2X7h+DxQG0PmH3FCVi
+
+    QmW8pBDeFnt9M5SoJe0372ArTcLExKzzALZLpx+AHKedvTv6hzuDJNVwOkpmkGCC
+
+    RWEkeTgMiLY819DaY3mSkuuY7fjDBN1yhjTAuPm0IK09Ywsi0V7Qu+L2wcqGUM2L
+
+    7zdTerIH3EBafmy46VUFVrVzw1iIm4j8GbSINu98YEfH1BCy5VgfXvka9UTVKKoI
+
+    kk/XalS+a4c=
+
+    =b1WU
+
+    -----END PGP SIGNATURE-----
+
+'
+  signing_service: null
+version: 2.1.0
+version_url: /api/galaxy/content/rh-certified/v3/plugin/ansible/content/rh-certified/collections/index/redhat/rhv/versions/2.1.0/

@@ -1,0 +1,8 @@
+download_url: https://hub.lab.example.com/api/galaxy/v3/plugin/ansible/content/community/collections/artifacts/community-crypto-2.7.0.tar.gz
+format_version: 1.0.0
+name: crypto
+namespace: community
+server: https://hub.lab.example.com/api/galaxy/content/community/
+signatures: []
+version: 2.7.0
+version_url: /api/galaxy/content/community/v3/plugin/ansible/content/community/collections/index/community/crypto/versions/2.7.0/

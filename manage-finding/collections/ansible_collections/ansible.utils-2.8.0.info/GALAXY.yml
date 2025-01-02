@@ -1,0 +1,45 @@
+download_url: https://hub.lab.example.com/api/galaxy/v3/plugin/ansible/content/rh-certified/collections/artifacts/ansible-utils-2.8.0.tar.gz
+format_version: 1.0.0
+name: utils
+namespace: ansible
+server: https://hub.lab.example.com/api/galaxy/content/rh-certified/
+signatures:
+- pubkey_fingerprint: 39B5D759361A97464C564A8FE1A4BD708A828AAD
+  pulp_created: '2022-12-19T16:04:57.366114Z'
+  signature: '-----BEGIN PGP SIGNATURE-----
+
+    Version: GnuPG v1
+
+
+    iQIVAwUAY4ezkOGkvXCKgoqtAQiFew//eLGm4IMZRT6tbCN5Kb/ZgVvMXP3Yc6Rd
+
+    gCElDHOtozM7mw6kRsvEIFH0BLWHccNUWfUNOmkcoWaLT54Vp0qM501uSVzPGdPI
+
+    XcY58xd8HNrPxV14gT6J2ZDXQBVMOB0qnmo8qMPQgar0YrmVMvAYGaOUKctxrH00
+
+    cciOxEJMcdRzNajpRGw7nyzqL6w2UFkmoWrXK/JjSMBxPJg4la1POijxxcsi21I0
+
+    XYNrPEF/ddNe9ZvIwdhEDdGIqEAQZTFTJJnL9h3iktSLQFJEitAs7zQRJZ2glO22
+
+    hEwhp/n/pS9XGF0TLlPhbRcKG0hV2RuNBkl6rg3jvuJnB07u81mN1/CFMumln0w2
+
+    r3o31/ASheEfPyzqtTVFN8NQLDjYpvzLOlMSkw25TAxhBMDGyYugG6k56juYPFi8
+
+    1S8uTqEKZ3y33LvxhMJ1I3Ghh/H/P5ClsaZt/l+B7Di+lMn/79KzNEBCtM4N9cKg
+
+    bZ3k9twzXivE0klhzPTHt4qX6aGgB+lGud+zMbB5zb+mhTVXlVbWMGUTix+O/9xa
+
+    NENwzxZcgdTOtxvW7WDjpDa/g9EHzU4mbMqXDY8q7Wm9VKbMD/cHBaT9v+ORW2m3
+
+    BGv5OS2guHTAKUdJ+YNN2OinkYHu8+JUAmCWToYOQ45dOwizcNCanY4Asy4I7jI7
+
+    GLYixvDpSHY=
+
+    =1Jww
+
+    -----END PGP SIGNATURE-----
+
+'
+  signing_service: null
+version: 2.8.0
+version_url: /api/galaxy/content/rh-certified/v3/plugin/ansible/content/rh-certified/collections/index/ansible/utils/versions/2.8.0/

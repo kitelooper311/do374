@@ -1,0 +1,45 @@
+download_url: https://hub.lab.example.com/api/galaxy/v3/plugin/ansible/content/rh-certified/collections/artifacts/ansible-controller-4.2.1.tar.gz
+format_version: 1.0.0
+name: controller
+namespace: ansible
+server: https://hub.lab.example.com/api/galaxy/content/rh-certified/
+signatures:
+- pubkey_fingerprint: 39B5D759361A97464C564A8FE1A4BD708A828AAD
+  pulp_created: '2022-12-19T16:04:57.343431Z'
+  signature: '-----BEGIN PGP SIGNATURE-----
+
+    Version: GnuPG v1
+
+
+    iQIVAwUAYyh8OeGkvXCKgoqtAQg29BAAitFE8NICQp01pBeP/H3iuzqegnT4a8r6
+
+    vNXTgsevLuQODIv9L8IMYLDBp+Hmk5qVQeY7rEcJnmeBb+or9/ORs4hBFHZ+RHu6
+
+    xrFf8k8OMZLYNO+9/h9x3vW2KcpbjbbKt+GWpoQZlBFIehxnB1zkKMysPrmyspdH
+
+    MPA/EKkTreITfTUDcklcIWyTxn9qPT9LQQEgSFegJ49PfGoyEDwC67/OnR+ebovT
+
+    /ZBxAtLauGcdN1uYVgwXNwyCfTamRME/Dz+E8jIqu75rZjFhqxMW5P0ZsFpE92jv
+
+    nOXtRm9en5u8pHi8pFHo1l22xSh7qxCeYLB1OsZF7+Jazs+6ywdE9wXO09/67Az1
+
+    gon3a42LWlPQwB2OFDQTW7mV8pv/qWd+EE4PF0H1NZ+vz54W5PJWPTcWN09388rr
+
+    1gCX/uakunB59RGTKLhirqEkDbzOcTWhuVgAgmS7MLMhLzojyvbasN5XOWHFL93a
+
+    kyVvJiO65XRMt2wLElIxzICga7ulsM//KOwoqKDeL3ayTDpuLlJjGuwmoYYq3ePd
+
+    yP75SJVEVns6l/2p5dQ7UQn1Mdc45foNygzYg+uKy5z9fPzsse4gNkR7tz480zcp
+
+    s0/cnIe4WtRPv2IuFBeq9cTRcWjbTxKlrH1hi2hh5NmD2cZxRhTn/0pEIcjrYO38
+
+    asp6rF+E3Kk=
+
+    =bMaM
+
+    -----END PGP SIGNATURE-----
+
+'
+  signing_service: null
+version: 4.2.1
+version_url: /api/galaxy/content/rh-certified/v3/plugin/ansible/content/rh-certified/collections/index/ansible/controller/versions/4.2.1/

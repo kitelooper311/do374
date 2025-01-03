@@ -1,0 +1,24 @@
+---
+- name: Clean Web Servers
+  hosts: web_servers
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Ensure the packages are removed
+      ansible.builtin.yum:
+        name:
+          - httpd
+          - mod_ssl
+          - httpd-tools
+          - mariadb-server
+          - mariadb
+          - php
+          - php-mysqlnd
+        state: absent
+        autoremove: true
+
+    - name: Ensure the web content is removed
+      ansible.builtin.file:
+        path: /var/www/html/
+        state: absent

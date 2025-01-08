@@ -1,0 +1,15 @@
+---
+- name: Test Firewall Role
+  hosts: web_servers
+  roles:
+    - role: firewall
+      firewall_rules:
+        - port: "{{ apache_port }}"
+          protocol: TCP
+          zone: internal
+        - zone: internal
+          source: 172.25.250.10
+        - service: ftp
+          state: disabled
+
+

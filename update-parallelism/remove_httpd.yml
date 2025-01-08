@@ -1,0 +1,22 @@
+---
+- name: Remove the web server
+  hosts: webservers
+  become: true
+  gather_facts: false
+
+  tasks:
+    - name: Query service facts
+      ansible.builtin.service_facts:
+
+    - name: Disable httpd service
+      ansible.builtin.service:
+        name: httpd
+        enabled: false
+        state: stopped
+      when: ansible_facts['services']['httpd.service'] is defined
+
+    - name: Remove httpd package
+      ansible.builtin.yum:
+        name: httpd
+        state: absent
+        autoremove: true

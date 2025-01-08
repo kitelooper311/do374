@@ -1,0 +1,9 @@
+---
+# defaults file for webapp
+
+# The directory on the web server where you
+# deploy the web application
+webapp_content_dir: /var/www/html
+
+# The web application version
+webapp_version: v1.0

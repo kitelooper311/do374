@@ -1,0 +1,16 @@
+---
+# tasks file for webapp
+
+# - name: Copy the code from the repository
+#   git:
+#     repo: "{{ webapp_repo }}"
+#     version: "{{ webapp_version }}"
+#     dest: /var/www/html/
+#     accept_hostkey: true
+#     key_file: deployment key??
+
+- name: Copy a stub file.
+  ansible.builtin.copy:
+    content: "This is {{ ansible_hostname }}. (version {{ webapp_version}})\n"
+    dest: /var/www/html/index.html
+

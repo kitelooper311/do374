@@ -1,0 +1,4 @@
+*.log
+*-artifact-*
+.ssh
+collections/ansible_collections

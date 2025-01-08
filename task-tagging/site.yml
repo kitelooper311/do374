@@ -1,0 +1,12 @@
+
+- name: Deploy HAProxy
+  ansible.builtin.import_playbook: deploy_haproxy.yml
+
+- name: Deploy Web Server
+  ansible.builtin.import_playbook: deploy_apache.yml
+
+- name: Deploy Web App
+  ansible.builtin.import_playbook: deploy_webapp.yml
+
+- name: Test deployed Web App
+  ansible.builtin.import_playbook: test_webapp.yml

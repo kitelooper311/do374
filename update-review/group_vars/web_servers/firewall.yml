@@ -1,0 +1,7 @@
+firewall_rules:
+  # Allow http requests from the load_balancer.
+  - zone: internal
+    port: "{{ apache_port }}/tcp"
+  - zone: internal
+    source: "172.25.250.10"
+

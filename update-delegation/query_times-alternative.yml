@@ -1,0 +1,18 @@
+---
+- name: Query server times and store them locally
+  hosts: web_servers
+  gather_facts: true
+  become: true
+
+  tasks:
+
+    - name: get time
+      ansible.builtin.set_fact:
+        time: "{{ ansible_facts.date_time.time }}"
+
+    - name: store results
+      delegate_to: workstation
+      run_once: true
+      template:
+        src: cp.j2
+        dest: /tmp/times.txt

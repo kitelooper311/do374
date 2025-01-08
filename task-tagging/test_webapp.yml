@@ -1,0 +1,15 @@
+---
+- name: Web application smoke test
+  hosts: web_servers
+  gather_facts: false
+  tasks:
+
+    - name: Verify content of http://localhost
+      register: test_url
+      failed_when: "'Hello from' not in test_url['content']"
+      tags:
+        - test
+      ansible.builtin.uri:
+         url: http://localhost
+         return_content: true
+

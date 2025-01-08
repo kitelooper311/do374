@@ -1,0 +1,64 @@
+---
+# tasks file for apache
+
+- name: Apache Port Check
+  ansible.builtin.assert:
+    that:
+      - apache_port in apache_standard_ports_list
+    fail_msg: "{{ tmp_msg}}: {{ apache_standard_ports_list }}"
+    success_msg: The specified apache port ({{ apache_port }}) is allowed.
+  vars:
+    tmp_msg: "'apache_port' value ({{ apache_port }}) is not in the list"
+
+- name: Install httpd
+  ansible.builtin.yum:
+    name:
+      - httpd
+    state: present
+
+- name: Start and enable httpd
+  ansible.builtin.service:
+    name: httpd
+    state: started
+    enabled: true
+
+- name: Customize SELinux for web_content_dir
+  block:
+    - name: Set webapp_base fact
+      ansible.builtin.set_fact:
+        webapp_base: "{{ webapp_content_dir | split('/') }}"
+
+    - name: Web directory is a subdirectory of /srv
+      ansible.builtin.assert:
+        that:
+          - webapp_base[0] == ''
+          - webapp_base[1] == 'srv'
+          - webapp_base[2] is defined
+        fail_msg: '"{{ webapp_content_dir }}" is not a subdirectory of /srv.'
+        success_msg: '"{{ webapp_content_dir }}" is a subdirectory of /srv.'
+
+    - name: Customize Apache HTTPD Configuration
+      ansible.builtin.template:
+        src: templates/httpd.conf.j2
+        dest: /etc/httpd/conf/httpd.conf
+      notify: restart httpd
+
+    - name: Ensure that {{ webapp_content_dir }} exists
+      ansible.builtin.file:
+        path: "{{ webapp_content_dir }}"
+        state: directory
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Create SELinux file context for the directory
+      ansible.builtin.include_role:
+        name: redhat.rhel_system_roles.selinux
+      vars:
+        selinux_fcontexts:
+          - target: "/{{ webapp_base[1] }}/{{ webapp_base[2] }}(/.*)?"
+            setype: "httpd_sys_content_t"
+            state: present
+        selinux_restore_dirs:
+          - /{{ webapp_base[1] }}/{{ webapp_base[2] }}
+  when: "webapp_content_dir != '/var/www/html'"

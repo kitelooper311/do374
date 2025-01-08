@@ -1,0 +1,38 @@
+---
+# tasks file for firewall
+
+- name: Ensure Firewall Source Configuration
+  firewalld:
+    source: "{{ item['source'] }}"
+    zone: "{{ item['zone'] | default(omit) }}"
+    permanent: true
+    state: "{{ item['state'] | default('enabled') }}"
+    immediate: true
+  loop: "{{ firewall_rules }}"
+  notify: reload firewalld
+  when: item['source'] is defined
+  become: true
+
+- name: Ensure Firewall Service Configuration
+  firewalld:
+    zone: "{{ item['zone'] | default(omit) }}"
+    permanent: true
+    state: "{{ item['state'] | default('enabled') }}"
+    service: "{{ item['service'] }}"
+    immediate: true
+  loop: "{{ firewall_rules }}"
+  notify: reload firewalld
+  when: item['service'] is defined
+  become: true
+
+- name: Ensure Firewall Port Configuration
+  firewalld:
+    zone: "{{ item['zone'] | default(omit) }}"
+    permanent: true
+    state: "{{ item['state'] | default('enabled') }}"
+    port: "{{ item['port'] }}"
+    immediate: true
+  loop: "{{ firewall_rules }}"
+  notify: reload firewalld
+  when: item['port'] is defined
+  become: true

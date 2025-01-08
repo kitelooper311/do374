@@ -1,0 +1,10 @@
+#Constructing the value of the
+# firewall_rules variable for the
+# firewall role.
+
+- zone: internal
+  port: {{ apache_port }}/tcp
+{% for load_balancer in groups['lb_servers'] %}
+- zone: internal
+  source: "{{ hostvars[load_balancer]['ansible_facts']['default_ipv4']['address'] }}"
+{% endfor %}

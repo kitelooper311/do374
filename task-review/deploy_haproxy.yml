@@ -1,0 +1,18 @@
+---
+- name: Ensure HAProxy is deployed
+  hosts: lb_servers
+  become: true
+  force_handlers: true
+  gather_facts: false
+
+  pre_tasks:
+
+    - name: setting the maintenance message
+      ansible.builtin.copy:
+        content: "Playbook site.yml ready to start"
+        dest: /tmp/site.ready
+
+  roles:
+    # The "haproxy" role has a dependency on the "firewall" role.
+    # The "firewall" role requires the "firewall_rules" variable.
+    - role: haproxy

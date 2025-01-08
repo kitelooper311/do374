@@ -1,0 +1,56 @@
+---
+- name: Install web servers with WSGI interface
+  hosts: web_servers
+  become: true
+  vars:
+    httpd_packages:
+      - httpd
+      - python3-mod_wsgi
+    apache_test_message: This is a test message
+    apache_max_keep_alive_requests: 115
+
+  tasks:
+    - name: Install the apache web server
+      ansible.builtin.yum:
+        name: "{{ httpd_packages }}"
+        state: present
+      notify: restart apache service
+
+    - name: Generate apache's configuration file from jinja2 template
+      ansible.builtin.template:
+        src: templates/httpd.conf.j2
+        dest: /etc/httpd/conf/httpd.conf
+      notify: restart apache service
+
+    - name: Generate a basic homepage from jinja2 template
+      ansible.builtin.template:
+        src: templates/index.html.j2
+        dest: /var/www/html/index.html
+        force: true
+
+    - name: Open the firewalld http port
+      ansible.posix.firewalld:
+        port: 80/tcp
+        permanent: true
+        state: enabled
+      notify: restart firewalld service
+
+    - name: Start the apache web server
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: true
+
+  handlers:
+    - name: restart firewalld service
+      ansible.builtin.service:
+        name: firewalld
+        state: restarted
+        enabled: true
+
+    - name: restart apache service
+      ansible.builtin.service:
+        name: httpd
+        state: restarted
+        enabled: true
+

@@ -1,0 +1,11 @@
+#Constructing the value of the
+# firewall_rules variable for the
+# firewall role.
+
+- port: {{ apache_port }}
+  protocol: TCP
+  zone: internal
+{% for server in groups['lb_servers'] %}
+- zone: internal
+  source: {{ hostvars[server]['ansible_facts']['default_ipv4']['address'] }}
+{% endfor %}

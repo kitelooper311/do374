@@ -1,0 +1,13 @@
+---
+# tasks file for firewall
+
+- name: Ensure Firewall Sources Configuration
+  firewalld:
+    source: "{{ item['source'] | default(omit) }}"
+    zone: "{{ item['zone'] | default(omit) }}"
+    permanent: true
+    state: "{{ item['state'] | default('enabled') }}"
+    service: "{{ item['service'] | default(omit) }}"
+    immediate: true
+    port: "{{ item['port'] | default(omit) }}"
+  loop: "{{ firewall_rules }}"

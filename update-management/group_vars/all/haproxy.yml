@@ -1,0 +1,10 @@
+# All servers may need to know the port
+# that clients use to connect to haproxy.
+haproxy_port: 80
+
+haproxy_backend_port: 8081
+
+haproxy_backend_pool:
+  - name: servera.lab.example.com
+    ip: 172.25.250.10
+    backend_port: 80

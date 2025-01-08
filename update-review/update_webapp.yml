@@ -1,0 +1,38 @@
+---
+- name: Upgrade Web Application
+  hosts: web_servers
+  become: true
+  serial: 
+    - 5%
+    - 35%
+    - 100%
+  max_fail_percentage: 0
+
+  vars:
+    webapp_version: v1.1
+
+  pre_tasks:
+   - name: Remove web server from service during the update
+     delegate_to: "{{ groups['lb_servers'][0] }}"
+     community.general.haproxy:
+       state: disabled
+       host: "{{ inventory_hostname }}"
+       backend: app
+
+  roles:
+    - role: webapp
+
+  post_tasks:
+    - name: Smoke Test - Ensure HTTP 200 OK
+      delegate_to: "{{ groups['lb_servers'][0] }}"
+      become: false
+      ansible.builtin.uri:
+        url: "http://{{ inventory_hostname }}:{{ apache_port }}"
+        status_code: 200
+
+    - name: Enable web server from service during the update
+      delegate_to: "{{ groups['lb_servers'][0] }}"
+      community.general.haproxy:
+        state: enabled
+        host: "{{ inventory_hostname }}"
+        backend: app

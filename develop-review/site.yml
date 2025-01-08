@@ -1,0 +1,6 @@
+---
+- name: sets the GRUB timeout
+  hosts: all
+  become: true
+  roles:
+    - role: grub

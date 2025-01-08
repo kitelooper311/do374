@@ -1,0 +1,7 @@
+---
+# tasks file for webapp
+- name: Ensure stub web content is deployed
+  ansible.builtin.copy:
+    content: "{{ webapp_message }}. (version {{ webapp_version}})\n"
+    dest: /var/www/html/index.html
+

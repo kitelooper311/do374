@@ -1,0 +1,17 @@
+---
+- name: Ensure Apache is not deployed
+  hosts: web_servers
+  gather_facts: false
+  become: true
+
+  tasks:
+    - name: Ensure the packages are not installed
+      ansible.builtin.yum:
+        name:
+          - httpd
+          - php
+          - git
+          - php-mysqlnd
+        state: absent
+        autoremove: true
+...

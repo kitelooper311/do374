@@ -1,0 +1,9 @@
+---
+- name: Set webapp facts
+  ansible.builtin.set_fact:
+    webapp_file: "files/simple-webapp/index.html"
+
+- name: Copy webapp content
+  ansible.builtin.template:
+    src: "{{ webapp_file }}"
+    dest: "{{ webapp_content_dir }}"

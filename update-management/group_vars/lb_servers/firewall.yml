@@ -1,0 +1,4 @@
+
+# One firewall rule; enable client-facing port.
+firewall_rules:
+  - port: "{{ haproxy_port }}/tcp"

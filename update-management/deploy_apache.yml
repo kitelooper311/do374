@@ -1,0 +1,18 @@
+---
+- name: Set Load Balancer facts
+  hosts: lb_servers
+  gather_facts: true
+  tasks: []
+
+- name: Ensure Apache is deployed
+  hosts: web_servers
+  become: true
+  force_handlers: true
+  gather_facts: false
+
+  roles:
+    # Use the apache_firewall_rules.yml.j2 template to
+    # generate the firewall rules.
+    - role: firewall
+      firewall_rules: "{{ lookup('ansible.builtin.template', 'templates/apache_firewall_rules.yml.j2') | from_yaml }}"
+    - role: apache

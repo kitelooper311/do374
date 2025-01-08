@@ -1,0 +1,44 @@
+- name: First play for netfilter exercise
+  hosts: servera.lab.example.com
+  become: false
+  vars:
+    listips:
+      - 192.168.2.1
+      - 10.0.0.128/25
+      - 172.24.10.0/255.255.255.0
+      - 172.24.10.0/255.255.255.255
+      - ff02::1
+      - ::1
+      - 2001::1/64
+      - 2001::/64
+      - www.redhat.com
+
+  tasks:
+    - name: 1) Display all addresses
+      ansible.builtin.debug:
+        msg: "{{ listips | ansible.utils.ipaddr }}"
+
+    - name: 2) Use host
+      ansible.builtin.debug:
+        msg: "{{ listips | ansible.utils.ipaddr('host') }}"
+
+    - name: 3) Use net
+      ansible.builtin.debug:
+        msg: "{{ listips | ansible.utils.ipaddr('net') }}"
+
+    - name: 4) Use private
+      ansible.builtin.debug:
+        msg: "{{ listips | ansible.utils.ipaddr('private') }}"
+
+    - name: 5) Use public
+      ansible.builtin.debug:
+        msg: "{{ listips | ansible.utils.ipaddr('public') }}"
+
+    - name: 6) Use ipwrap
+      ansible.builtin.debug:
+        msg: "{{ listips | ansible.utils.ipwrap }}"
+
+    - name: 7) Use ipaddr and ipwrap
+      ansible.builtin.debug:
+        msg: "{{ listips | ansible.utils.ipaddr | ansible.utils.ipwrap }}"
+

@@ -1,0 +1,8 @@
+- name: Display the default ipv4 address facts
+  hosts: servera.lab.example.com
+  become: false
+
+  tasks:
+    - name: Print the default ipv4 address facts
+      ansible.builtin.debug:
+        msg: "{{ ansible_default_ipv4 }}"

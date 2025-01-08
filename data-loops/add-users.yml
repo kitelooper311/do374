@@ -1,0 +1,13 @@
+- name: Second task
+  hosts: servera.lab.example.com
+  gather_facts: false
+  become: true
+
+  tasks:
+    - name: Add users and put them in the right groups
+      loop: "{{ my_users | subelements('my_groups', 'skip_missing=true') }}"
+      ansible.builtin.user:
+        name: "{{ item[0]['name'] }}"
+        append: true
+        groups: "{{ item[1] }}"
+        state: present

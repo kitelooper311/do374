@@ -1,0 +1,13 @@
+---
+- name: First task
+  hosts: servera.lab.example.com
+  gather_facts: false
+  become: true
+
+  tasks:
+    - name: Add groups
+      loop: "{{ rgroups | dict2items }}"
+      ansible.builtin.group:
+        name: "{{ item.key }}"
+        gid: "{{ item.value.gid }}"
+        state: present

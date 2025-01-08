@@ -1,0 +1,52 @@
+# Tasks make use of the gathered fact 'default_ipv4', and its keys 'address', and 'netmask'.
+
+- name: Second play for netfilter exercise
+  hosts: servera.lab.example.com
+  become: false
+
+  tasks:
+    - name: Set address and network facts
+      ansible.builtin.set_fact:
+        ipv4_addr: "{{ ansible_facts['default_ipv4']['address'] }}"
+        ipv4_subnet: "{{ ansible_facts['default_ipv4']['netmask'] }}"
+
+    - name: Set facts derived from ipv4_addr and ipv4_subnet
+      ansible.builtin.set_fact:
+        server_address: "{{ ipv4_addr | ansible.utils.ipaddr }}"
+        ptr_record: "{{ ipv4_addr | ansible.utils.ipaddr('revdns') }}"
+        net_mask: "{{ ipv4_addr }}/{{ ipv4_subnet }}"
+
+    - name: Set facts derived from net_mask
+      ansible.builtin.set_fact:
+        cidr: "{{ net_mask | ansible.utils.ipaddr('network/prefix') }}"
+        broadcast: "{{ net_mask | ansible.utils.ipaddr('broadcast') }}"
+
+
+    - name: Display server_address
+      ansible.builtin.debug:
+        msg: server_address is {{ server_address }}
+
+    - name: Display PTR record form for server_address
+      ansible.builtin.debug:
+        msg: ptr_record is {{ ptr_record }}
+
+    - name: Display address and netmask in VLSM notation
+      ansible.builtin.debug:
+        msg: net_mask is {{ net_mask }}
+
+    - name: Display address and prefix in CIDR notation
+      ansible.builtin.debug:
+        msg: cidr is {{ cidr }}
+
+    - name: Display broadcast address for {{ cidr }}
+      ansible.builtin.debug:
+        msg: broadcast is {{ broadcast }}
+
+    - name: Print addresses on {{ cidr }} from this task's list
+      ansible.builtin.debug:
+        msg: "{{ item | ansible.utils.ipaddr(cidr) }}"
+      loop:
+        - 172.16.0.1
+        - 172.25.250.4
+        - 192.168.122.20
+        - 192.0.2.55

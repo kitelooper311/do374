@@ -1,0 +1,3 @@
+servers:
+  hosts:
+    server[a:f].lab.example.com

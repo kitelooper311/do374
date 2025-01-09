@@ -1,0 +1,7 @@
+---
+- name: Test custom collection
+  hosts: serverd.lab.example.com
+  become: true
+
+  roles:
+    - role: student.testcollection.mymotd

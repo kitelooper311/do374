@@ -1,0 +1,40 @@
+== Collection
+
+training.web
+
+
+== Python packages
+
+Pillow
+qrcode
+
+
+== Private automation hub
+
+     URL: https://hub.lab.example.com
+Username: student
+Password: redhat123
+
+
+== Automation execution environment
+
+    Base image: hub.lab.example.com/ee-minimal-rhel8:latest
+ Builder image: hub.lab.example.com/ansible-builder-rhel8:latest
+Image to build: hub.lab.example.com/review/ee-training-rhel8:v1.0
+
+
+== Classroom TLS CA certificate on workstation
+
+/etc/pki/tls/certs/classroom-ca.pem
+
+
+== Automation controller
+
+                  URL: https://controller.lab.example.com
+             Username: admin
+             Password: redhat
+
+Execution environment: Training Review
+         Job template: Deploy QR Codes
+
+             Test URL: http://serverf.lab.example.com

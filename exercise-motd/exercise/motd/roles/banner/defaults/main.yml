@@ -1,0 +1,4 @@
+---
+# defaults file for banner
+width: 78
+message: "This system is managed by Ansible."

@@ -1,0 +1,30 @@
+{
+ "collection_info": {
+  "namespace": "exercise",
+  "name": "motd",
+  "version": "1.0.0",
+  "authors": [
+   "Student User <student@lab.example.com>"
+  ],
+  "readme": "README.md",
+  "tags": [],
+  "description": "your collection description",
+  "license": [
+   "GPL-2.0-or-later"
+  ],
+  "license_file": null,
+  "dependencies": {},
+  "repository": "http://example.com/repository",
+  "documentation": "http://docs.example.com",
+  "homepage": "http://example.com",
+  "issues": "http://example.com/issue/tracker"
+ },
+ "file_manifest_file": {
+  "name": "FILES.json",
+  "ftype": "file",
+  "chksum_type": "sha256",
+  "chksum_sha256": "c76e40b270b759ab37596ad87e4e293a74a7fe0b688b4d325a3903006b6faa91",
+  "format": 1
+ },
+ "format": 1
+}

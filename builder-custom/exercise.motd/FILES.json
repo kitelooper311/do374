@@ -1,0 +1,96 @@
+{
+ "files": [
+  {
+   "name": ".",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "7f8849277ed75b89a8e88cae71ae466ce990a5d9e74e8d074be12cecfa75cc00",
+   "format": 1
+  },
+  {
+   "name": "roles",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/banner",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/banner/README.md",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "c0c1846c688e967444e5eb096e67e29b75f80c9e6138991d6dfcf6f8c0fcd1ca",
+   "format": 1
+  },
+  {
+   "name": "roles/banner/defaults",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/banner/defaults/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "9c06814e60842f9c6b895e0f81d9645d0e10fc1d95f81459261019a2553970b5",
+   "format": 1
+  },
+  {
+   "name": "roles/banner/meta",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/banner/meta/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "cbc8cdfee008ba6e1fafb1cde5184ba1b8e1b7953e16fcd8bcf0098aaea60060",
+   "format": 1
+  },
+  {
+   "name": "roles/banner/tasks",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/banner/tasks/main.yml",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "e3804d777d00b1dae549d5080ae97d063fa353f41abca525d88b152c68effcad",
+   "format": 1
+  },
+  {
+   "name": "roles/banner/templates",
+   "ftype": "dir",
+   "chksum_type": null,
+   "chksum_sha256": null,
+   "format": 1
+  },
+  {
+   "name": "roles/banner/templates/motd.j2",
+   "ftype": "file",
+   "chksum_type": "sha256",
+   "chksum_sha256": "7bac99243ed108a0b3caee97ff369a9e5db1f95a93bd5c05579da4d24648c5d9",
+   "format": 1
+  }
+ ],
+ "format": 1
+}

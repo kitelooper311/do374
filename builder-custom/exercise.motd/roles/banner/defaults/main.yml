@@ -1,0 +1,5 @@
+---
+# defaults file for banner
+width: 78
+message_1: "This system is managed by Ansible."
+message_2: "AAP2.0"

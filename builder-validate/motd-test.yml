@@ -1,0 +1,7 @@
+---
+- name: Test banner role from exercise.motd collection
+  hosts: all
+  collections:
+    - exercise.motd
+  roles:
+    - name: exercise.motd.banner

@@ -1,0 +1,21 @@
+---
+# tasks file for banner
+- name: Ensure /etc/motd.d/ exists
+  ansible.builtin.file:
+    path: /etc/motd.d
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Create custom motd banner
+  vars:
+    left_pad_1: "{{ (width - (message_1 | length)) // 2 }}"
+    left_pad_2: "{{ (width - (message_2 | length)) // 2 }}"
+    right_pad_1: "{{ left_pad_1|int + ((width - (message_1 | length)) % 2) }}"
+    right_pad_2: "{{ left_pad_2|int + ((width - (message_2 | length)) % 2) }}"  
+    formatted_msg_1: "=={% for x in range((left_pad_1|int) - 1) %} {% endfor %}{{ message_1 }}{% for y in range((right_pad_1|int) - 1) %} {% endfor %}=="
+    formatted_msg_2: "=={% for x in range((left_pad_2|int) - 1) %} {% endfor %}{{ message_2 }}{% for y in range((right_pad_2|int) - 1) %} {% endfor %}==" 
+  ansible.builtin.template:
+    src: motd.j2
+    dest: /etc/motd.d/banner

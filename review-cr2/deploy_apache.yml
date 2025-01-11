@@ -1,0 +1,12 @@
+---
+- name: Ensure Apache is deployed
+  hosts: web_servers
+  force_handlers: true
+  gather_facts: false
+  become: true
+
+  roles:
+    # Use the apache_firewall_rules.yml.j2 template to
+    # generate the firewall rules.
+    - role: apache
+      firewall_rules: "{{ lookup('ansible.builtin.template', 'templates/apache_firewall_rules.yml.j2') | from_yaml }}"

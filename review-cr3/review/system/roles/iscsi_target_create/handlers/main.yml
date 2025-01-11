@@ -1,0 +1,7 @@
+---
+- name: Restarting target
+  ansible.builtin.service:
+    name: target
+    state: restarted
+    enabled: true
+...

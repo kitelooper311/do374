@@ -1,0 +1,31 @@
+---
+- name: Set webapp facts
+  ansible.builtin.set_fact:
+    webapp_src_dir: "files/simple-webapp"
+
+- name: Set webapp file whitelist fact
+  ansible.builtin.set_fact:
+    webapp_whitelist: "{{ query('fileglob', webapp_src_dir + '/*') | map('relpath', webapp_src_dir) | list }}"
+
+- name: Get list of remote files in the content directory
+  ansible.builtin.find:
+    paths: "{{ webapp_content_dir }}"
+  register: remote_files
+
+- name: Remove extraneous remote files
+  ansible.builtin.file:
+    path: "{{ webapp_content_dir }}/{{ item }}"
+    state: absent
+  loop: "{{ webapp_all_files | difference(webapp_whitelist) }}"
+  vars:
+    webapp_all_files: "{{ remote_files['files'] | map(attribute='path') | map('relpath', webapp_content_dir) | list }}"
+
+- name: Copy webapp content
+  ansible.builtin.template:
+    src: "{{ webapp_src_dir }}/{{ item }}"
+    dest: "{{ webapp_content_dir }}/{{ item }}"
+    owner: root
+    group: root
+    mode: 0644
+    setype: httpd_sys_content_t
+  loop: "{{ webapp_whitelist }}"

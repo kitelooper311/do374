@@ -1,0 +1,12 @@
+---
+- name: Sharing the disk using iSCSI
+  hosts: storage
+  become: true
+  gather_facts: false
+
+  tasks:
+    - include_role:
+        name: iscsi_target_create
+      vars:
+        iscsi_target_create_iqn: iqn.2021-04.com.example:disk1
+...

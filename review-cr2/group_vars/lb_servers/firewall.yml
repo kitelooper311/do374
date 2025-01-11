@@ -1,0 +1,4 @@
+---
+firewall_rules:
+  # Allow http connections
+  - port: 80

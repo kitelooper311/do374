@@ -1,0 +1,60 @@
+== Collection
+
+review.system
+
+
+== Private automation hub
+
+     URL: https://hub.lab.example.com
+Username: student
+Password: redhat123
+
+
+== Automation controller
+
+     URL: https://controller.lab.example.com
+Username: admin
+Password: redhat
+
+
+== Automation execution environment
+
+    Base image: hub.lab.example.com/ee-minimal-rhel8:latest
+ Builder image: hub.lab.example.com/ansible-builder-rhel8:latest
+Image to build: hub.lab.example.com/system/ee-review-rhel8:v1.0
+
+
+== Classroom TLS CA certificate on workstation
+
+/etc/pki/tls/certs/classroom-ca.pem
+
+
+== Automation controller resources
+
+               --- Credentials ---
+
+              Machine: DevOps (devops/redhat, sudo, root/redhat)
+       Source control: GitLab
+
+
+               --- Inventory ---
+
+                 Name: Review 3
+                Hosts: serverc.lab.example.com
+
+
+               --- Project ---
+
+                 Name: iSCSI
+              Git URL: git@git.lab.example.com:student/iscsi.git
+
+
+               --- Execution environment ---
+
+                 Name: Review 3
+                Image: hub.lab.example.com/system/ee-review-rhel8:v1.0
+
+
+               --- Job template ---
+
+                 Name: Configure iSCSI

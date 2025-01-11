@@ -1,0 +1,29 @@
+---
+- name: Test Firewall Role
+  hosts: serverf.lab.example.com
+  become: true
+  gather_facts: false
+
+  roles:
+    - role: firewall
+      firewall_rules:
+        - port: 4242
+          protocol: TCP
+          zone: internal
+        - zone: internal
+          source: 172.25.250.10
+        - service: ftp
+          state: disabled
+        - port: 4343
+
+    - role: firewall
+      firewall_rules:
+        - port: 4242
+          protocol: TCP
+          zone: internal
+          state: disabled
+        - zone: internal
+          source: 172.25.250.10
+          state: disabled
+        - port: 4343
+          state: disabled

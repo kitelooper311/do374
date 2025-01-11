@@ -1,0 +1,4 @@
+collections:
+  review.system:
+  ansible.posix:
+  community.general:

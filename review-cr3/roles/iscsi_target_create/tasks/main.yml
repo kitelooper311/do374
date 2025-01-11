@@ -1,0 +1,35 @@
+---
+- name: Ensure the iSCSI target package is installed
+  ansible.builtin.yum:
+    name: targetcli
+    state: present
+
+- name: Ensure the iSCSI target configuration is deployed
+  ansible.builtin.template:
+    src: templates/saveconfig.json
+    dest: /etc/target/saveconfig.json
+    mode: 0600
+    owner: root
+    group: root
+    setype: targetd_etc_rw_t
+  notify:
+    - Restarting target
+
+- name: Ensure the disk is excluded from LVM
+  ansible.builtin.lineinfile:
+    path: /etc/lvm/lvm.conf
+    state: present
+    line: 'filter = [ "r|/dev/{{ iscsi_target_create_disk }}|" ]'
+    insertafter: '^devices {'
+    mode: 0644
+    owner: root
+    group: root
+    setype: lvm_etc_t
+
+- name: Ensure the firewall is opened for iSCSI
+  ansible.posix.firewalld:
+    service: iscsi-target
+    state: enabled
+    immediate: true
+    permanent: true
+...

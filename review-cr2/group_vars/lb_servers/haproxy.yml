@@ -1,0 +1,6 @@
+# defaults file for haproxy
+
+# Log-level for HAProxy logs
+haproxy_log_level: info
+
+

@@ -1,0 +1,37 @@
+---
+# tasks file for apache
+
+- name: Ensure httpd packages are installed
+  tags: 
+    - apache_installer
+  ansible.builtin.yum:
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - httpd
+      - php
+      - git
+      - php-mysqlnd
+
+- name: Ensure SELinux allows httpd connections to a remote database
+  ansible.posix.seboolean:
+    name: httpd_can_network_connect_db
+    state: true
+    persistent: true
+
+- name: Ensure httpd service is started and enabled
+  ansible.builtin.service:
+    name: httpd
+    state: started
+    enabled: true
+
+- name: Ensure configuration is deployed
+  ansible.builtin.template:
+    src: httpd.conf.j2
+    dest: /etc/httpd/conf/httpd.conf
+    owner: root
+    group: root
+    mode: 0644
+    setype: httpd_config_t
+  notify: restart httpd

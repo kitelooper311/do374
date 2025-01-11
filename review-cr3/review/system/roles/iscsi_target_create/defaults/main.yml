@@ -1,0 +1,5 @@
+---
+iscsi_target_create_disk: vdb
+iscsi_target_create_block_name: "{{ inventory_hostname_short }}.disk1"
+iscsi_target_create_iqn: "iqn.2021-04.com.example:{{ inventory_hostname_short }}"
+...

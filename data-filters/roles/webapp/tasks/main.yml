@@ -1,0 +1,29 @@
+---
+# tasks file for webapp
+
+- name: Ensure stub web content is deployed
+  ansible.builtin.copy:
+    content: "{{ webapp_message }} (version {{ webapp_version }})\n"
+    dest: "{{ webapp_content_root_dir }}/index.html"
+
+- name: Find deployed webapp files
+  ansible.builtin.find:
+    paths: "{{ webapp_content_root_dir }}"
+    recurse: true
+  register: webapp_find_files
+
+- name: Compute the webapp file list
+  ansible.builtin.set_fact:
+    webapp_deployed_files: "{{ webapp_find_files['files'] | map(attribute='path') | list }}"
+
+- name: Compute the relative webapp file list
+  ansible.builtin.set_fact:
+    webapp_rel_deployed_files: "{{ webapp_deployed_files | map('relpath', webapp_content_root_dir) | list }}"
+
+- name: Remove Extraneous Files
+  ansible.builtin.file:
+    path: "{{ webapp_content_root_dir }}/{{ item }}"
+    state: absent
+  loop: "{{ webapp_rel_deployed_files | difference(webapp_file_list) }}"
+
+
